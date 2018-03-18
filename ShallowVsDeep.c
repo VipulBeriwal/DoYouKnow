@@ -2,9 +2,10 @@
 #include <stdio.h>
 
 /*This program explains the meaning of Deep copy and shared copy with the help of the simple program.
-We have a structure which contain attributes as int pointer and int as attributes. First make var1 and initialize it with some values.
-Then we copied the car1 innto another variable var2. By this the attributes whihch are non pointer types will have deep copies and
-attributes which are pointer types will be shallow copied i.e they point to the same location.*/
+We have a structure which contain attributes as int pointer and int as attributes. First make var1 and 
+initialize it with some values. Then we copied the car1 innto another variable var2. By this the attributes 
+whihch are non pointer types will have deep copies and attributes which are pointer types will be shallow 
+copied i.e they point to the same location.*/
 
 
 
