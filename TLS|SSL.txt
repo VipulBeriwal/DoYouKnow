@@ -1,4 +1,4 @@
-Before actual transfer of data, there are three major steps than happen between clkient and server.
+Before actual transfer of data, there are three major steps than happen between client and server.
 
 1. Certificate Validation.
 The server has its "Root Certificate" which is signed by a Certiticate Authority(CA). CA signs the certificate by its private key but 
