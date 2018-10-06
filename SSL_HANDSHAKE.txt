@@ -1,0 +1,47 @@
+Note - 
+-If something is encrypted by private key it can only be decrypted by public key. 
+-If something is decrypted by public key it can only be decrypted by the private key.
+-Noboady shares its private key!!
+
+SSL handshake involves the exchange of asymmetric and symmetric keys.
+The process is as follows - 
+
+1. Browser sends the connection request to the server to indentify itself(server identification).
+
+2. Servers sends the copy of its certificate encrpyted by the private key of CA Authority.
+   The certificate consists of public key of the server, the statements (that says - this is the public key of this server), date of 
+   expiration, certificate chain...). 
+   -----BEGIN CERTIFICATE-----
+  ... (certificate for your server)...
+  -----END CERTIFICATE-----
+  -----BEGIN CERTIFICATE-----
+  ... (the certificate for the CA)...
+  -----END CERTIFICATE-----
+  -----BEGIN CERTIFICATE-----
+  ... (the root certificate for the CA's issuer)...
+  -----END CERTIFICATE-----
+   
+3. Since it is encrypted by the privaate key of the CA Authority, it can only be decrypted by the public key of that CA Authority.
+
+4. Browsers have the list of trusted CA Authorities by default. That means they have the public keys of all trusted CA Authority. 
+   Therefore, when certificate arrives, browser loop through by matching public key of all the CA Authorities. If it is matched(unlocked)
+   it will ensure that the server is "TRUSTED". (also checks expiration date of the server)
+  
+5. Now, it will fetch the public key of the server form the certificate. Now, the client has the public key of server. Now it generates, 
+   the private session key(symmetric key, only shared by client and server). Then, it encrpyts this session key by public key of the 
+   server and sends to server.
+   
+6. Since, this encryted seeion key can only be decryted by the private of the server, the server can only has that private session key.
+   Some middleman can have that encryted data but he/she can never decrpt that data since it requires the private key of the server and
+   nobody will have that except server.
+   
+7. Now, server will send the acknowledgement encrypted by this session key and thus, only the client will be able to decryt that and client
+   and now handshake is completed.
+   
+8. From now on, they will encypt data by their private session keys and nobody can decrypt that except them!! 
+
+
+
+References - 
+https://docs.python.org/2/library/ssl.html#ssl-certificates
+https://www.digicert.com/ssl/
