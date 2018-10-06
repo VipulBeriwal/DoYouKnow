@@ -1,7 +1,7 @@
 Before actual transfer of data, there are three major steps than happen between client and server.
 
 1. Certificate Validation.
-The server has its "Root Certificate" which is signed by a Certiticate Authority(CA). CA signs the certificate by its private key but 
+The server has its "Certificate" which is signed by a Certiticate Authority(CA). CA signs the certificate by its private key but 
 this certificate contains public key and identity of the server. When client asks for certificate from the server, it will loop through the
 saved public keys(in browser) to unlock the certificate from any one of the CA. Since the server certificate is signed by the private key it 
 can only be checked by public key of same CA. Any other cannot encrypt the certificate beacuse it will not match the public key pair(we cannot
