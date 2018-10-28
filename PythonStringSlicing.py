@@ -3,9 +3,10 @@
 Rules -
 RULE1-
   if start point is not mentioned,
-    then default start is 0 if stride > 0 
-  else:
-    start point is last character of string that is -1.a nd start is -1
+    if stride > 0
+      default start is 0 
+    else:
+      start point is last character of string that is -1. start is -1
 
 RULE2-
   Negative stride means that move backwards from that index/position by n steps if provided otherwise 1
