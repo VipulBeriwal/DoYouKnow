@@ -1,6 +1,6 @@
 '''
+[<start> : <end> : <sign = direction, magnitude = steps>]
 Rules -
-
 RULE1-
   if start point is not mentioned,
     then default start is 0 if stride > 0 
