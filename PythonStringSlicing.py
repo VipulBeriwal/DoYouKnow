@@ -16,8 +16,8 @@ RULE3-
   If moving forwards. the string ends, iterator will stop.
   
 RULE4-
-  If moving backward, and |end| < |start|, it will not print it.
-  if moving forward, |end| < |start|, it will not print it.
+  If moving backward, and end > start, it will not print it.
+  if moving forward, end <start, it will not print it
   
 '''
 
